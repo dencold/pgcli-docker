@@ -21,5 +21,24 @@ You'll get a prompt for password, once authenticated you'll be in a pgcli sessio
 
 ## TODOs
 
-* See if we can reference the `POSTGRES_ENV_POSTGRES_PASSWORD` variable in as an argument to pgcli, this would allow for automatic connection to the instance.
+* See if we can reference the `POSTGRES_ENV_POSTGRES_PASSWORD` variable in as an argument to pgcli, this would allow for automatic connection to the instance. Looks like from usage there isn't a password option:
+```
+$ pgcli --help
+Usage: pgcli [OPTIONS] DATABASE
+
+Options:
+  -h, --host TEXT     Host address of the postgres database.
+  -p, --port INTEGER  Port number at which the postgres instance is listening.
+  -U, --user TEXT     User name to connect to the postgres database.
+  -W, --password      Force password prompt.
+  --help              Show this message and exit.
+```
+
+**BUT** there is the ability to pass a dburl: 
+
+```
+$ pgcli postgres://amjith:passw0rd@example.com:5432/app_db
+```
+We'll try to go that route.
+
 * Update `run_pgcli.sh` to also run with raw arguments instead of just relying on docker link.
