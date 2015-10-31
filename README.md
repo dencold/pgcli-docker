@@ -17,7 +17,7 @@ If you have a postgres container already running, all you need to do is link the
 
 ```docker run -it --link my-postgres:postgres --rm dencold/pgcli```
 
-You'll get a prompt for password, once authenticated you'll be in a pgcli session. When you exit, the container will automatically be cleaned up.
+It will determine host, port, and login details directly from the linked postgres container's environment variables. You should be dropped right into a pgcli session without the need to type in any credentials. Awesomesauce!
 
 ### Version Notes
 
@@ -27,24 +27,6 @@ Current version of the repository is **0.19.2**.
 
 ## TODOs
 
-* See if we can reference the `POSTGRES_ENV_POSTGRES_PASSWORD` variable in as an argument to pgcli, this would allow for automatic connection to the instance. Looks like from usage there isn't a password option:
-```
-$ pgcli --help
-Usage: pgcli [OPTIONS] DATABASE
-
-Options:
-  -h, --host TEXT     Host address of the postgres database.
-  -p, --port INTEGER  Port number at which the postgres instance is listening.
-  -U, --user TEXT     User name to connect to the postgres database.
-  -W, --password      Force password prompt.
-  --help              Show this message and exit.
-```
-
-**BUT** there is the ability to pass a dburl: 
-
-```
-$ pgcli postgres://amjith:passw0rd@example.com:5432/app_db
-```
-We'll try to go that route.
+* We currently rely on environment variables such as POSTGRES_ENV_POSTGRES_PASSWORD in order to log the user into the postgres session. We should have some detection built into the script when the variables aren't set and provide some helpful feedback to the caller.  
 
 * Update `run_pgcli.sh` to also run with raw arguments instead of just relying on docker link.
