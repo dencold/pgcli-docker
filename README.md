@@ -5,12 +5,11 @@ Dockerized version of the [pgcli](http://pgcli.com/) tool for postgres.
 
 1. Pull the docker image: `docker pull dencold/pgcli`
 2. Run the container: `docker run -it --rm dencold/pgcli DB_URL`
-3. Or, if you already have a postgres container, you can just do this:
-```docker run -it --link my-postgres:postgres --rm dencold/pgcli```
+3. Or, if you already have a postgres container, you can just do this: `docker run -it --link my-postgres:postgres --rm dencold/pgcli`
 
 Note that *DB_URL* is in the format of:
 
-```postgresql://user:password@host:port/dbname```
+`postgresql://user:password@host:port/dbname`
 
 For more information on database connection strings, see the [postgres documentation](http://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING).
 
