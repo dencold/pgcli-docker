@@ -15,6 +15,10 @@ For more information on database connection strings, see the [postgres documenta
 
 For other run options, see the "Running" section, below.
 
+Here's a screencap to show how easy it is to use pglci to connect to a postgres container in docker:
+
+![pgcli screencast](https://gifs.com/gif/LXLRzR)
+
 ### Why a docker version?
 
 Installing pgcli is a [fairly straightforward process](http://pgcli.com/install), as long as you already have postgres installed, you can generally get away with a straight `pip install`, however there are some gotchas. For example, on linux there are a host of other dependencies, from the pgcli installation guide:
