@@ -1,6 +1,8 @@
 # pgcli-docker
 Dockerized version of the [pgcli](http://pgcli.com/) tool for postgres. 
 
+[![Screenshot](Screenshot.gif)](https://gifs.com/gif/LXLRz)
+
 ### Quick usage
 
 1. Pull the docker image: `docker pull dencold/pgcli`
@@ -14,10 +16,6 @@ Note that *DB_URL* is in the format of:
 For more information on database connection strings, see the [postgres documentation](http://www.postgresql.org/docs/current/static/libpq-connect.html#LIBPQ-CONNSTRING).
 
 For other run options, see the "Running" section, below.
-
-Here's a screencap to show how easy it is to use pglci to connect to a postgres container in docker:
-
-![pgcli screencast](https://gifs.com/gif/LXLRzR)
 
 ### Why a docker version?
 
