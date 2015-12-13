@@ -1,7 +1,7 @@
 # pgcli-docker
 Dockerized version of the [pgcli](http://pgcli.com/) tool for postgres. 
 
-[![Screenshot](Screenshot.gif)](https://raw.githubusercontent.com/dencold/pgcli-docker/master/screencap.gif)
+![Screenshot.gif](https://raw.githubusercontent.com/dencold/pgcli-docker/master/screencap.gif)
 
 ### Quick usage
 
