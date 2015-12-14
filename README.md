@@ -44,9 +44,3 @@ It will determine host, port, and login details directly from the linked postgre
 In order to guarantee stability, the version for pgcli is pinned in the Dockerfile. The maintainers (currently just @dencold) will work to keep this updated and make sure that things don't break between releases. Both the Docker image on the hub, as well as the git repository will be tagged with the version information and will match what we are pulling from pgcli.
 
 Current version of the repository is **0.20.1**.
-
-## TODOs
-
-* We currently rely on environment variables such as POSTGRES_ENV_POSTGRES_PASSWORD in order to log the user into the postgres session. We should have some detection built into the script when the variables aren't set and provide some helpful feedback to the caller.  
-
-* Update `run_pgcli.sh` to also run with raw arguments instead of just relying on docker link.
