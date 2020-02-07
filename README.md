@@ -41,6 +41,4 @@ It will determine host, port, and login details directly from the linked postgre
 
 ### Version Notes
 
-In order to guarantee stability, the version for pgcli is pinned in the Dockerfile. The maintainers (currently just @dencold) will work to keep this updated and make sure that things don't break between releases. Both the Docker image on the hub, as well as the git repository will be tagged with the version information and will match what we are pulling from pgcli.
-
-Current version of the repository is **1.4.0**.
+This package used to pin pgcli's version to guarantee combatibility, but that's no longer the case. The docker container is created using `pip install pgcli` so you'll automatically get the latest version of the tool when you run your docker pull.
